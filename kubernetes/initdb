@@ -1,0 +1,10 @@
+CREATE DATABASE testdb;
+CREATE TABLE messages(
+   ID INT PRIMARY KEY     NOT NULL,
+   ENV            TEXT    NOT NULL,
+   MESSAGE        TEXT     NOT NULL
+);
+INSERT INTO messages (id, env, message)
+VALUES (1, 'DEV', 'Hello world! This is dev!');
+INSERT INTO messages (id, env, message)
+VALUES (2, 'PRD', 'Hello world! This is prd!');

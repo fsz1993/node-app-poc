@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: node-app
+data:
+  PGHOST: postgres.node-app.svc.cluster.local
+  PGPORT: "5432"
+  ENV: DEV
+  PGDATABASE: node-db

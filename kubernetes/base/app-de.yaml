@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+  namespace: node-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app
+      namespace: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+        namespace: node-app
+    spec:
+      containers:
+        - name: node-app
+          image: node-web-app:1.0.0
+          imagePullPolicy: "Always"
+          envFrom:
+            - secretRef:
+                name: node-postgres-secret
+            - configMapRef:
+                name: postgres-config
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "100m"
+            limits:
+              memory: "250Mi"
+              cpu: "250m"

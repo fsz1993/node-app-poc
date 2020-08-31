@@ -1,0 +1,5 @@
+PGUSER=postgres
+PGHOST=localhost
+PGPASSWORD=secretpassword
+PGDATABASE=testdb
+PGPORT=49161
